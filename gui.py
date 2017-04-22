@@ -1,5 +1,5 @@
 from tkinter import *
-import tkinter.filedialog, tkinter.ttk, time, random, tkinter.simpledialog, tkinter.messagebox
+import tkinter.filedialog, tkinter.ttk, time, random, tkinter.simpledialog, tkinter.messagebox, encrypt, decrypt
 
 
 root = Tk()
@@ -47,6 +47,7 @@ def barProgress():
 def callback_b1():
     message.set("")
     textInput = tkinter.simpledialog.askstring("Enter a message", "Text to encrypt", parent = root)
+    encrypt.encryptMessage(name)
     if textInput:
         name = openFile()
         print("[Encrypt] " + name)
@@ -55,6 +56,7 @@ def callback_b1():
 def callback_b2():
     message.set("")
     name = openFile()
+    decrypt.decryptMessage(name)
     print("[Decrypt] " + name)
     message.set(name)
 
