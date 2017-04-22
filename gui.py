@@ -47,9 +47,9 @@ def barProgress():
 def callback_b1():
     message.set("")
     textInput = tkinter.simpledialog.askstring("Enter a message", "Text to encrypt", parent = root)
-    encrypt.encryptMessage(name)
     if textInput:
         name = openFile()
+        encrypt.encryptMessage(name)
         print("[Encrypt] " + name)
 
 
