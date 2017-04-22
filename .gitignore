@@ -1,0 +1,12 @@
+
+*.iml
+
+*.xml
+
+*.DS_Store
+
+*.pyc
+
+filtered-output.wav
+
+result.txt

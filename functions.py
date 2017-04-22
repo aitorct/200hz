@@ -8,9 +8,9 @@ def encryptChar( char ):
 def decryptValue( value ):
     for i in range(0, 60):
         if ((i*500) - 100) < value < ((i*500) + 100):
-            
+
             return alphabet[i]
-    return 0
+    return ' '
 
 def keyDictionary(x):
     return {
@@ -78,3 +78,10 @@ def keyDictionary(x):
         'Z': 30500,
         ' ': 31000,
     }[x]
+def toString(list):
+    phrase = ""
+    for component in list:
+        temp = str(phrase) + str(component)
+        phrase = temp
+        temp = ""
+    return phrase
