@@ -2,7 +2,6 @@ from __future__ import print_function, division, unicode_literals
 import wave
 import functions as fnc
 import numpy as np
-import matplotlib.pyplot as plt
 # compatibility with Python 3
 
 def encryptMessage( path ):
@@ -24,10 +23,11 @@ def encryptMessage( path ):
     sz = wr.getframerate()
     c = int(wr.getnframes()/sz)
     #user input
-    message = raw_input("Write the secret message: ")
+    message = input("Write the secret message: ")
+    print("Message Accepted")
 
     for num in range(c):
-        print('Processing {}/{} s'.format(num+1, c))
+        # print('Processing {}/{} s'.format(num+1, c))
         da = np.fromstring(wr.readframes(sz), dtype=np.int16)
         # left and right channel
         left, right = da[0::2], da[1::2]

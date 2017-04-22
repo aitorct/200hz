@@ -1,5 +1,8 @@
 from tkinter import *
-import tkinter.filedialog, tkinter.ttk, time, random
+#from decr
+#from decrypt import decryptMessage
+import tkinter.filedialog, tkinter.ttk, time, random, encrypt, decrypt
+
 
 
 root = Tk()
@@ -44,11 +47,13 @@ def barProgress():
 def callback_b1():
     name = openFile()
     print("[Encrypt] " + name)
+    encrypt.encryptMessage(name)
 
 
 def callback_b2():
     name = openFile()
     print("[Decrypt] " + name)
+    decrypt.decryptMessage(name)
 
 
 title = Label(topFrame, text="200Hz", font=("Helvetica", 48), fg="white", background='black')
