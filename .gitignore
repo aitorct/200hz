@@ -1,14 +1,6 @@
-
 *.iml
-
 *.xml
-
 *.DS_Store
-
 *.pyc
-
-filtered-output.wav
-
 result.txt
-
-200hz_.wav
+*.wav
