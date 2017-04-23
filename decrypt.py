@@ -16,24 +16,39 @@ def decryptMessage( path ):
     sz = wr.getframerate()
     c = int(wr.getnframes()/sz)
 
-    for num in range(c):
-        # print('Processing {}/{} s'.format(num+1, c))
-        da = np.fromstring(wr.readframes(sz), dtype=np.int16)
-        left, right = da[0::2], da[1::2]
-        lf, rf = np.fft.rfft(left), np.fft.rfft(right)
 
-        nl, nr = np.fft.irfft(lf), np.fft.irfft(rf)
+    # print('Processing {}/{} s'.format(num+1, c))
+    da = np.fromstring(wr.readframes(sz), dtype=np.int16)
+    left, right = da[0::2], da[1::2]
+    lf, rf = np.fft.rfft(left), np.fft.rfft(right)
 
-        #for i in range(nl):
-        #    print(nl[i])
+    print( "lf decrypt" )
+    for u in lf:
+        print( str(u))
+    #nl, nr = np.fft.irfft(lf), np.fft.irfft(rf)
 
+
+    """
     iterations = int(nl[0]) + 2
     # print("Iterations: "+str(iterations))
     finalMessage = []
 
     for j in range(1, iterations):
-        finalMessage.append( fnc.decryptValue( nl[j] ) );
+        finalMessage.append( fnc.decryptValue( lf[j] ) )
+        #finalMessage.append( fnc.decryptValue( nl[j] ) );
 
     print(fnc.toString(finalMessage))
+    """
 
     wr.close()
+
+    #for i in lf:
+    #    print("Value lf: "+str(i))
+
+    """
+
+    print("*****************")
+
+    for i in nr:
+        print("Value nr: "+str(i))
+    """

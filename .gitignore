@@ -2,6 +2,6 @@
 *.xml
 *.DS_Store
 *.pyc
+filtered-output.wav
 result.txt
-*.wav
-.pylintrc
+200hz_.wav

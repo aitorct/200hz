@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter.filedialog, tkinter.ttk, time, random, tkinter.simpledialog, tkinter.messagebox, encrypt, decrypt
 
 
+
 root = Tk()
 root.wm_title("")
 root.configure(bg='#ececec')
