@@ -20,7 +20,7 @@ def decryptMessage( path ):
     lf, rf = np.fft.rfft(left), np.fft.rfft(right)
     nl, nr = np.fft.irfft(lf), np.fft.irfft(rf)
 
-    iterations = int(nl[0]) + 2
+    iterations = int(da[0]) + 1
     finalMessage = []
 
     for j in range(1, iterations):
@@ -28,6 +28,9 @@ def decryptMessage( path ):
 
     print(fnc.toString(finalMessage))
 
+    #print("Lengh:"+ str(int(nl[0])))
+
+    #print(da)
 
     wr.close()
 

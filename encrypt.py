@@ -1,11 +1,13 @@
 from __future__ import print_function, division, unicode_literals
-import wave
+import wave, os
 import functions as fnc
 import numpy as np
 
+
 def encryptMessage( path, textInput ):
 
-    fileName = '200hz_.wav'
+    head, tail = os.path.split(path)
+    fileName = "[200Hz] "+tail
 
     # Created input file if not exists with:
     wr = wave.open(path, 'r')
@@ -50,7 +52,8 @@ def encryptMessage( path, textInput ):
 
         ns = np.column_stack((nl,nr)).ravel().astype(np.int16)
         ww.writeframes(ns.tostring())
-
+    #print("Lengh:"+ str(nl[0]))
+    #print(ns)
 
     wr.close()
     ww.close()
