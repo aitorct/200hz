@@ -22,31 +22,28 @@ def decryptMessage( path ):
     left, right = da[0::2], da[1::2]
     lf, rf = np.fft.rfft(left), np.fft.rfft(right)
 
-    print( "lf decrypt" )
-    for u in lf:
-        print( str(u))
-    #nl, nr = np.fft.irfft(lf), np.fft.irfft(rf)
+
+    nl, nr = np.fft.irfft(lf), np.fft.irfft(rf)
 
 
-    """
+
     iterations = int(nl[0]) + 2
     # print("Iterations: "+str(iterations))
     finalMessage = []
 
     for j in range(1, iterations):
-        finalMessage.append( fnc.decryptValue( lf[j] ) )
-        #finalMessage.append( fnc.decryptValue( nl[j] ) );
+        #finalMessage.append( fnc.decryptValue( lf[j] ) )
+        finalMessage.append( fnc.decryptValue( nl[j] ) );
 
     print(fnc.toString(finalMessage))
-    """
+
 
     wr.close()
 
-    #for i in lf:
-    #    print("Value lf: "+str(i))
+    for i in nl:
+        print("Value lf: "+str(int(i)))
 
     """
-
     print("*****************")
 
     for i in nr:

@@ -4,7 +4,7 @@ import functions as fnc
 import numpy as np
 # compatibility with Python 3
 
-def encryptMessage( path ):
+def encryptMessage( path, textInput ):
 
     fileName = '200hz_.wav'
 
@@ -24,7 +24,8 @@ def encryptMessage( path ):
     c = int(wr.getnframes()/sz)
     #user input
     #message = input("Write the secret message: ")
-    message = "00000000123456789abcdefghijklmnopqrstuvwxyz"
+    #message = "00000000123456789abcdefghijklmnopqrstuvwxyz"
+    message = textInput
     print("Message Accepted")
 
     # print('Processing {}/{} s'.format(num+1, c))
@@ -46,9 +47,9 @@ def encryptMessage( path ):
         for char in message:
 
             temp = fnc.encryptChar(char)
-            #nl[k], nr[k] = temp, temp
+            nl[k], nr[k] = temp, temp
             # print("Value"+str(temp))
-            lf[k], rf[k] = temp, temp
+            # lf[k], rf[k] = temp, temp
 
             k = k + 1
     #print( "lf encrypt")
@@ -59,6 +60,8 @@ def encryptMessage( path ):
     ns2 = ns * 2
     ww.writeframes(ns2.tostring())
 
+    for i in nl:
+        print(str(i))
 
     wr.close()
     ww.close()

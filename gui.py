@@ -50,7 +50,7 @@ def callback_b1():
     textInput = tkinter.simpledialog.askstring("Enter a message", "Text to encrypt", parent = root)
     if textInput:
         name = openFile()
-        encrypt.encryptMessage(name)
+        encrypt.encryptMessage(name, textInput)
         print("[Encrypt] " + name)
 
 
