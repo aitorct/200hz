@@ -1,5 +1,5 @@
 from tkinter import *
-import tkinter.filedialog, tkinter.ttk, time, random, tkinter.simpledialog, tkinter.messagebox, encrypt, decrypt
+import tkinter.filedialog, tkinter.ttk, time, random, tkinter.simpledialog, tkinter.messagebox, encrypt, decrypt, functions
 
 
 
@@ -31,9 +31,6 @@ def openFile():
         barProgress()
         return filename
 
-    #if filename:
-    #    return open(filename, 'r')
-
 
 def barProgress():
     global mpb
@@ -51,15 +48,15 @@ def callback_b1():
     if textInput:
         name = openFile()
         encrypt.encryptMessage(name, textInput)
-        print("[Encrypt] " + name)
+        print("[Message Encrypted] " + name)
 
 
 def callback_b2():
     message.set("")
     name = openFile()
-    decrypt.decryptMessage(name)
-    print("[Decrypt] " + name)
-    message.set(name)
+    decryptedMessage = decrypt.decryptMessage(name)
+    print("[Message Decrypted] " + decryptedMessage)
+    message.set(decryptedMessage)
 
 
 title = Label(topFrame, text="200Hz", font=("Helvetica", 48), fg="white", background='black')
