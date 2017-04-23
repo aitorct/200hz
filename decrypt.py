@@ -26,11 +26,6 @@ def decryptMessage( path ):
     for j in range(1, iterations):
         finalMessage.append( fnc.decryptValue( nl[j] ) );
 
-    print(fnc.toString(finalMessage))
-
-    #print("Lengh:"+ str(int(nl[0])))
-
-    #print(da)
 
     wr.close()
 

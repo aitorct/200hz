@@ -52,8 +52,6 @@ def encryptMessage( path, textInput ):
 
         ns = np.column_stack((nl,nr)).ravel().astype(np.int16)
         ww.writeframes(ns.tostring())
-    #print("Lengh:"+ str(nl[0]))
-    #print(ns)
 
     wr.close()
     ww.close()
