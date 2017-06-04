@@ -1,7 +1,5 @@
-from __future__ import print_function, division, unicode_literals
-import wave
-import functions as fnc
-import numpy as np
+import wave, functions as fnc, numpy as np
+
 
 def decryptMessage( path ):
 

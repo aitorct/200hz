@@ -1,6 +1,5 @@
 from tkinter import *
-import tkinter.filedialog, tkinter.ttk, time, random, tkinter.simpledialog, tkinter.messagebox, encrypt, decrypt, functions
-
+import tkinter.filedialog, tkinter.simpledialog, tkinter.ttk, time, random, encrypt, decrypt
 
 
 root = Tk()
